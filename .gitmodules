@@ -7,3 +7,7 @@
 [submodule "cpp/json"]
 	path = cpp/json
 	url = https://github.com/nlohmann/json.git
+[submodule "cpp/ds"]
+	path = cpp/ds
+	url = git@github.com:ITMO-PTDC-Team/2024-huawei-splay-list.git
+	branch = ds
