@@ -50,4 +50,6 @@ cpp/common/papi/a.out
 *-build-*/
 ../.idea/
 cpp/.vscode/
-
+averaged_results/
+jsons/
+load_jsons/

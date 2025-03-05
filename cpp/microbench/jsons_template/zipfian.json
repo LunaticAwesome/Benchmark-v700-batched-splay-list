@@ -1,0 +1,85 @@
+{
+  "prefill": {
+      "numThreads": 1,
+      "stopCondition": {
+          "ClassName": "OperationCounter",
+          "commonOperationLimit": 1024
+      },
+      "threadLoopBuilders": [
+          {
+              "quantity": 1,
+              "threadLoopBuilder": {
+                  "ClassName": "PrefillInsertThreadLoopBuilder",
+                  "argsGeneratorBuilder": {
+                      "ClassName": "DefaultArgsGeneratorBuilder",
+                      "dataMapBuilder": {
+                          "ClassName": "IdDataMapBuilder",
+                          "id": 4
+                      },
+                      "distributionBuilder": {
+                          "ClassName": "UniformDistributionBuilder"
+                      }
+                  },
+                  "numberOfAttempts": 10000000
+              }
+          }
+      ]
+  },
+  "range": 100000,
+  "test": {
+      "numThreads": 16,
+      "stopCondition": {
+          "ClassName": "Timer",
+          "workTime": 10000
+      },
+      "threadLoopBuilders": [
+          {
+              "pin": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15
+              ],
+              "quantity": 16,
+              "threadLoopBuilder": {
+                  "ClassName": "DefaultThreadLoopBuilder",
+                  "argsGeneratorBuilder": {
+                      "ClassName": "DefaultArgsGeneratorBuilder",
+                      "dataMapBuilder": {
+                          "ClassName": "ArrayDataMapBuilder",
+                          "id": 1
+                      },
+                      "distributionBuilder": {
+                        "ClassName": "ZipfianDistributionBuilder",
+                        "alpha": 1.0
+                      }
+                  },
+                  "parameters": {
+                      "insertRatio": 0.0,
+                      "removeRatio": 0.0,
+                      "rqRatio": 0.0
+                  }
+              }
+          }
+      ]
+  },
+  "warmUp": {
+      "numThreads": 4,
+      "stopCondition": {
+          "ClassName": "Timer",
+          "workTime": 5000
+      }
+  }
+}
