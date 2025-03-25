@@ -74,8 +74,8 @@
                         }
                     },
                     "parameters": {
-                        "insertRatio": 0.0,
-                        "removeRatio": 0.0,
+                        "insertRatio": 0.01,
+                        "removeRatio": 0.01,
                         "rqRatio": 0.0
                     }
                 }
@@ -89,4 +89,4 @@
             "workTime": 5000
         }
     }
-}
+  }
